@@ -40,3 +40,17 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY industry
 ORDER BY average_salary DESC;
+
+-- Question 3:
+-- Does remote work relate to salary?
+
+SELECT
+    remote_ratio,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(salary_usd), 2) AS average_salary,
+    MIN(salary_usd) AS minimum_salary,
+    MAX(salary_usd) AS maximum_salary
+FROM ai_ds_job_salaries_2026
+GROUP BY remote_ratio
+ORDER BY remote_ratio;
+
