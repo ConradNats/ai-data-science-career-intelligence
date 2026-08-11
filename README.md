@@ -91,26 +91,4 @@ The project uses the following technologies:
 - **Git & GitHub** — Version control and project management
 
 
-### What we're doing here
-
-This tells anyone visiting your GitHub repository **how the project is organized**.
-
-For example:
-
-- `data/` → datasets
-- `notebooks/` → analysis and experiments
-- `sql/` → SQL analysis
-- `src/` → reusable Python code
-- `models/` → trained ML models
-- `dashboard/` → Power BI dashboard
-- `app/` → Streamlit application
-- `reports/` → final reports
-
-**Don't create all those files yet.** Some of them will be created naturally as we build the project.
-
-Save the README again.
-
-Then we'll add the **Project Workflow**, which will show the complete journey from:
-
-**Raw Data → Cleaning → EDA → SQL → Feature Engineering → Machine Learning → Dashboard → App**.
 
