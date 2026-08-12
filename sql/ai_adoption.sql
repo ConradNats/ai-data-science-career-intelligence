@@ -20,6 +20,8 @@ FROM ai_ds_job_salaries_2026
 GROUP BY uses_ai_tools_daily
 ORDER BY number_of_professionals DESC;
 
+
+
 -- Question 2:
 -- Which industries have the highest AI adoption?
 
@@ -45,6 +47,8 @@ FROM ai_ds_job_salaries_2026
 GROUP BY industry
 ORDER BY daily_ai_adoption_rate DESC;
 
+
+
 -- Question 3:
 -- Which experience levels have the highest AI adoption?
 
@@ -69,6 +73,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY experience_level
 ORDER BY daily_ai_adoption_rate DESC;
+
+
 
 -- Question 4:
 -- Which education groups have the highest AI adoption?
@@ -97,7 +103,60 @@ ORDER BY daily_ai_adoption_rate DESC;
 
 
 
+-- Question 5:
+-- Does daily AI usage relate to job satisfaction?
+
+SELECT
+    uses_ai_tools_daily,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(job_satisfaction_score), 2) AS average_job_satisfaction,
+    ROUND(MIN(job_satisfaction_score), 2) AS minimum_satisfaction,
+    ROUND(MAX(job_satisfaction_score), 2) AS maximum_satisfaction
+FROM ai_ds_job_salaries_2026
+GROUP BY uses_ai_tools_daily
+ORDER BY average_job_satisfaction DESC;
 
 
 
+-- Question 6:
+-- Does AI usage relate to fear of AI automation?
 
+SELECT
+    uses_ai_tools_daily,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(fears_ai_automation_score), 2) AS average_ai_fear,
+    ROUND(MIN(fears_ai_automation_score), 2) AS minimum_ai_fear,
+    ROUND(MAX(fears_ai_automation_score), 2) AS maximum_ai_fear
+FROM ai_ds_job_salaries_2026
+GROUP BY uses_ai_tools_daily
+ORDER BY average_ai_fear DESC;
+
+
+
+-- Question 7:
+-- How does weekly AI-tool usage differ by experience level?
+
+SELECT
+    experience_level,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(ai_tools_hours_per_week), 2) AS average_ai_hours_per_week,
+    ROUND(MIN(ai_tools_hours_per_week), 2) AS minimum_ai_hours,
+    ROUND(MAX(ai_tools_hours_per_week), 2) AS maximum_ai_hours
+FROM ai_ds_job_salaries_2026
+GROUP BY experience_level
+ORDER BY average_ai_hours_per_week DESC;
+
+
+
+-- Question 8:
+-- Which industries spend the most time using AI tools?
+
+SELECT
+    industry,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(ai_tools_hours_per_week), 2) AS average_ai_hours_per_week,
+    ROUND(MIN(ai_tools_hours_per_week), 2) AS minimum_ai_hours,
+    ROUND(MAX(ai_tools_hours_per_week), 2) AS maximum_ai_hours
+FROM ai_ds_job_salaries_2026
+GROUP BY industry
+ORDER BY average_ai_hours_per_week DESC;

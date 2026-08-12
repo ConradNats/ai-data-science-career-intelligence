@@ -15,6 +15,7 @@ FROM ai_ds_job_salaries_2026
 GROUP BY experience_level
 ORDER BY average_salary DESC;
 
+
 -- Question 1:
 -- Does experience level affect salary?
 
@@ -27,6 +28,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY experience_level
 ORDER BY average_salary DESC;
+
+
 
 -- Question 2:
 -- Which industries pay the highest salaries?
@@ -41,6 +44,8 @@ FROM ai_ds_job_salaries_2026
 GROUP BY industry
 ORDER BY average_salary DESC;
 
+
+
 -- Question 3:
 -- Does remote work relate to salary?
 
@@ -53,6 +58,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY remote_ratio
 ORDER BY remote_ratio;
+
+
 
 -- Question 4:
 -- Does education level relate to salary?
@@ -67,6 +74,8 @@ FROM ai_ds_job_salaries_2026
 GROUP BY education_level
 ORDER BY average_salary DESC;
 
+
+
 -- Question 5:
 -- Which programming languages are associated with higher salaries?
 
@@ -79,6 +88,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY primary_language
 ORDER BY average_salary DESC;
+
+
 
 -- Question 6:
 -- Does having ML in the job title relate to salary?
@@ -93,6 +104,8 @@ FROM ai_ds_job_salaries_2026
 GROUP BY has_ml_in_title
 ORDER BY average_salary DESC;
 
+
+
 -- Question 7:
 -- Do professionals who use AI tools daily earn more?
 
@@ -105,6 +118,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY uses_ai_tools_daily
 ORDER BY average_salary DESC;
+
+
 
 -- Question 8:
 -- Does AI usage intensity relate to salary?
@@ -121,6 +136,8 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY ai_usage_group
 ORDER BY average_salary DESC;
+
+
 
 
 
