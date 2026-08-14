@@ -160,3 +160,4 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY industry
 ORDER BY average_ai_hours_per_week DESC;
+

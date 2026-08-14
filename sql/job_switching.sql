@@ -69,3 +69,65 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY experience_level
 ORDER BY switching_rate DESC;
+
+-- Question 5:
+-- Does daily AI usage relate to job switching?
+
+SELECT
+    uses_ai_tools_daily,
+    COUNT(*) AS total_professionals,
+    SUM(
+        CASE
+            WHEN switched_jobs_last_year = 'TRUE' THEN 1
+            ELSE 0
+        END
+    ) AS job_switchers,
+    ROUND(
+        SUM(
+            CASE
+                WHEN switched_jobs_last_year = 'TRUE' THEN 1
+                ELSE 0
+            END
+        ) * 100.0 / COUNT(*),
+        2
+    ) AS switching_rate
+FROM ai_ds_job_salaries_2026
+GROUP BY uses_ai_tools_daily
+ORDER BY switching_rate DESC;
+
+-- Question 6:
+-- Which industries have the highest job-switching rates?
+
+SELECT
+    industry,
+    COUNT(*) AS total_professionals,
+    SUM(
+        CASE
+            WHEN switched_jobs_last_year = 'TRUE' THEN 1
+            ELSE 0
+        END
+    ) AS job_switchers,
+    ROUND(
+        SUM(
+            CASE
+                WHEN switched_jobs_last_year = 'TRUE' THEN 1
+                ELSE 0
+            END
+        ) * 100.0 / COUNT(*),
+        2
+    ) AS switching_rate
+FROM ai_ds_job_salaries_2026
+GROUP BY industry
+ORDER BY switching_rate DESC;
+
+-- Question 8:
+-- Which education levels have the highest job satisfaction?
+
+SELECT
+    education_level,
+    COUNT(*) AS number_of_professionals,
+    ROUND(AVG(job_satisfaction_score), 2) AS average_job_satisfaction,
+    ROUND(AVG(salary_usd), 2) AS average_salary
+FROM ai_ds_job_salaries_2026
+GROUP BY education_level
+ORDER BY average_job_satisfaction DESC;
