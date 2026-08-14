@@ -131,3 +131,5 @@ SELECT
 FROM ai_ds_job_salaries_2026
 GROUP BY education_level
 ORDER BY average_job_satisfaction DESC;
+
+
