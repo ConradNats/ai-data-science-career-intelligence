@@ -136,5 +136,7 @@ ORDER BY
         ELSE 3
     END;
 
+
+SELECT * FROM ai_ds_job_salaries_2026;
     
 
