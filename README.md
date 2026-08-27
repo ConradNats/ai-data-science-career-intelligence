@@ -3,7 +3,7 @@ An end-to-end data science project analyzing AI and Data Science salaries, caree
 
 # AI & Data Science Career Intelligence
 
-## 📌 Project Overview
+##  Project Overview
 
 AI & Data Science Career Intelligence is an end-to-end data science project that analyzes the careers, salaries, skills, AI adoption, job satisfaction, and career decisions of professionals working in AI and data-related fields.
 
